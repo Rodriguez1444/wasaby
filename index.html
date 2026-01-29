@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Mapa con Chat</title>
+<style>
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    flex-direction: column;
+}
+iframe {
+    width: 70%;
+    height: 600px;
+    border: 0;
+    margin-bottom: 20px;
+}
+button {
+    padding: 12px 20px;
+    background: #075e54;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover { background: #0a8a7b; }
+</style>
+</head>
+<body>
+
+<iframe 
+    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15174.650107540903!2d-98.4506523!3d18.040858749999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1769110806563!5m2!1ses-419!2smx"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<!-- Botón de chat -->
+<button onclick="openChat()">Chatear</button>
+
+<script>
+// 🔹 Crear roomId único para sala 1 a 1
+function openChat() {
+    const roomId = 'room_' + Date.now(); // ID único por sala
+    window.location.href = `chat.html?room=${roomId}`;
+}
+</script>
+
+</body>
+</html>
